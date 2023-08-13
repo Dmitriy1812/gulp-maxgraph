@@ -3,6 +3,7 @@ import { enableScroll } from '../functions/enable-scroll';
 
 (function(){
   const burger = document?.querySelector('[data-burger]');
+  const burgerClose = document?.querySelector('.header__burger--close');
   const menu = document?.querySelector('[data-menu]');
   const menuItems = document?.querySelectorAll('[data-menu-item]');
   const overlay = document?.querySelector('[data-menu-overlay]');
@@ -12,10 +13,12 @@ import { enableScroll } from '../functions/enable-scroll';
     menu?.classList.toggle('menu--active');
 
     if (menu?.classList.contains('menu--active')) {
+      overlay.classList.add('active');
       burger?.setAttribute('aria-expanded', 'true');
       burger?.setAttribute('aria-label', 'Закрыть меню');
       disableScroll();
     } else {
+      overlay.classList.remove('active');
       burger?.setAttribute('aria-expanded', 'false');
       burger?.setAttribute('aria-label', 'Открыть меню');
       enableScroll();
@@ -27,6 +30,16 @@ import { enableScroll } from '../functions/enable-scroll';
     burger?.setAttribute('aria-label', 'Открыть меню');
     burger.classList.remove('burger--active');
     menu.classList.remove('menu--active');
+    overlay.classList.remove('active');
+    enableScroll();
+  });
+
+  burgerClose?.addEventListener('click', () => {
+    burger?.setAttribute('aria-expanded', 'false');
+    burger?.setAttribute('aria-label', 'Открыть меню');
+    burger.classList.remove('burger--active');
+    menu.classList.remove('menu--active');
+    overlay.classList.remove('active');
     enableScroll();
   });
 
