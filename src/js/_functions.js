@@ -84,3 +84,77 @@ console.log(mobileCheck())
 // };
 
 // validateForms('.form-1', rules1, afterForm);
+
+// Пример массива с правилами 
+// const rules2 = [
+//   {
+//     ruleSelector: '.email',
+//     rules: [
+//       {
+//         rule: 'required',
+//         errorMessage: 'Обязательное поле',
+//       },
+//       {
+//         rule: 'email',
+//         errorMessage: 'Некорректный ввод email',
+//       },
+//     ],
+//   },
+//   {
+//     ruleSelector: '.name',
+//     rules: [
+//       {
+//         rule: 'required',
+//         errorMessage: 'Обязательное поле',
+//       },
+//       {
+//         rule: 'minLength',
+//         value: 3,
+//         errorMessage: 'Не меньше 3 символов',
+//       },
+//       {
+//         rule: 'maxLength',
+//         value: 15,
+//         errorMessage: 'Не более 15 символов',
+//       },
+//     ],
+//   },
+//   {
+//     ruleSelector: '.password',
+//     rules: [
+//       {
+//         rule: 'required',
+//         errorMessage: 'Обязательное поле',
+//       },
+//       {
+//         rule: 'password',
+//         errorMessage: 'Не менее 8 символов, одна буква и цифра',
+//       },
+//     ]
+//   },
+//   {
+//     ruleSelector: '.password-repeat',
+//     rules: [
+//       {
+//         rule: 'required',
+//         errorMessage: 'Обязательное поле',
+//       },
+//       {
+//         validator: (value, fields) => {
+//           // console.dir(document.querySelector('.password'))
+//           // document.querySelector('.password').addEventListener("keydoun", (e) => console.log(e))
+//           console.log(value)
+//           console.log(fields[3].elem.value)
+//           // console.log(fields[2])
+//           // console.log(fields[1].elem.value)
+//           if (value == fields[3].elem.value) {
+//             return true;
+//           } else {
+//             return false
+//           }
+//         },
+//         errorMessage: 'Пароль должен быть таким же',
+//       },
+//     ]
+//   },
+// ];
