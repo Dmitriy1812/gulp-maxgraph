@@ -82,8 +82,8 @@
 //   console.log(e.detail.dir);
 // });
 
-// import { validateForms } from './functions/validate-forms';
-// const rules1 = [...];
+// import { validateForms } from '../functions/validate-forms';
+// const rules1 = [];
 
 // const afterForm = () => {
 //   console.log('Произошла отправка, тут можно писать любые действия');
@@ -91,7 +91,7 @@
 
 // validateForms('.form-1', rules1, afterForm);
 
-// Пример массива с правилами 
+// Пример массива с правилами
 // const rules2 = [
 //   {
 //     ruleSelector: '.email',
@@ -161,6 +161,18 @@
 //         },
 //         errorMessage: 'Пароль должен быть таким же',
 //       },
+//     ]
+//   },
+//   {
+//     ruleSelector: '.input-tel',
+//     tel: true,
+//     telError: 'Введите корректный телефон',
+//     rules: [
+//       {
+//         rule: 'required',
+//         value: true,
+//         errorMessage: 'Заполните телефон!'
+//       }
 //     ]
 //   },
 // ];
